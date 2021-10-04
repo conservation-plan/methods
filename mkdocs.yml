@@ -19,15 +19,15 @@
 # IN THE SOFTWARE.
 
 # Project information
-site_name: proLand Tools
-site_url: https://github.com/GOG0310/proLand-tools
+site_name: reland Tools
+site_url: https://github.com/GOG0310/reland-tools
 site_author: Jeff Howarth
 site_description: >-
-  Tools for conservation planning.
+  Tools for planning land conservation and restoration.
 
 # Repository
-repo_name: GEOG0310/proLand-tools
-repo_url: https://github.com/GEOG310/proLand-tools
+repo_name: GEOG0310/reland-tools
+repo_url: https://github.com/GEOG310/reland-tools
 edit_uri: ""
 
 # Copyright
@@ -128,7 +128,9 @@ markdown_extensions:
 nav:
   - Introduction: index.md
   - Elevation:
-    - Mosaic tiles: elevation/mosaic.md
+    - Shaded relief: elevation/shadedRelief.md
+    - Slope class: elevation/slopeClass.md
+    - Heat load index: elevation/heatLoadIndex.md
 
 
 #  - Contributing: contributing.md
