@@ -8,7 +8,7 @@ The heatLoadIndex tool produces a heat load index layer from a DEM.
 
 ## 1. Replicate script  
 
-Atom>File>New File 'shadedRelief.py' into project folder. Copy script from [methods repo](https://github.com/GEOG0310/methods/tree/master/wbHome){target=_blank}. Paste script into 'shadedRelief.py'. Save file.    
+Atom>File>New File 'shadedRelief.py' into project folder. Copy script from [methods repo](https://github.com/GEOG0310/methods/tree/master/wbt_pySpace){target=_blank}. Paste script into 'shadedRelief.py'. Save file.    
 
 ## 2. Organize workspace     
 
