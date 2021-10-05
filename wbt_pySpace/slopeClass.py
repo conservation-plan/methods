@@ -25,7 +25,7 @@ wbt = WhiteboxTools()
 # Define the Whitebox working directory
 # You will need to change the path below to your local path name
 
-wbt.work_dir = "/Users/jhowarth/projects/GEOG0310/reland-tools/wbHome/data"
+wbt.work_dir = "/Users/jhowarth/projects/GEOG0310/methods/wbt_pySpace/data"
 
 # Declare a name for our test data path
 

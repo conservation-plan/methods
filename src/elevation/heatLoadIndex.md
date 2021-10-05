@@ -17,7 +17,7 @@ Make a 'data' directory within your 'wbt_pySpace' directory (if you do not alrea
 Copy the path to 'data' folder so you can set it as the working directory.  
 
 ```python
-wbt.work_dir = "/Users/jhowarth/projects/GEOG0310/methods/wbHome/data"
+wbt.work_dir = "/Users/jhowarth/projects/GEOG0310/methods/wbt_pySpace/data"
 ```
 
 Also check the name for your DEM (it may not be the same as below).

@@ -1,9 +1,11 @@
 # General
+
 .DS_Store
 .AppleDouble
 .LSOverride
 
 # WBT
+
 WBT/
 testDEM/
 sandbox/
