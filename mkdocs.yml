@@ -19,15 +19,15 @@
 # IN THE SOFTWARE.
 
 # Project information
-site_name: reland Tools
-site_url: https://github.com/GOG0310/reland-tools
+site_name: methods
+site_url: https://github.com/GOG0310/methods
 site_author: Jeff Howarth
 site_description: >-
-  Tools for planning land conservation and restoration.
+  Geographic methods for planning land conservation and restoration.
 
 # Repository
-repo_name: GEOG0310/reland-tools
-repo_url: https://github.com/GEOG310/reland-tools
+repo_name: GEOG0310/methods
+repo_url: https://github.com/GEOG310/methods
 edit_uri: ""
 
 # Copyright
