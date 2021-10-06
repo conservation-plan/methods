@@ -73,8 +73,8 @@ var right = {
 //  You should not need to change anything in this section.
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var leftMosaic = geoTools.yearMosaic(left.year);      //  make left mosaic image
-var rightMosaic = geoTools.yearMosaic(right.year);    //  make right mosaic image
+var leftMosaic = geoTools.yearMosaic(extent, left.year);      //  make left mosaic image
+var rightMosaic = geoTools.yearMosaic(extent, right.year);    //  make right mosaic image
 
 var leftMap = ui.Map();                               //  make left map
 var rightMap = ui.Map();                              //  make right map
