@@ -152,7 +152,7 @@ var clipRegion = ee.FeatureCollection('users/jhowarth/geog0310/_testExtent').fir
 
 var ex = {
   image: leftImage,         //  Choose if you want to export left or right mosaic image
-  label: 's2Export',        //  Choose image name
+  label: '_s2Export',        //  Choose image name
   scale: 10,                //  Choose the scale to export
   folder: 'EExport',        //  Choose folder on Google Drive to store the export
   CRS: 'EPSG:32145',        //  Choose coordinate reference system
@@ -181,4 +181,4 @@ var exportDict = {                                //  EXPORT PARAMETERS
   fileFormat: 'GeoTiff'                           //  Format of exported file
 };
 
-Export.image.toDrive(exportDict);                 //  EXECUTE EXPORT  
+Export.image.toDrive(exportDict);                 //  EXECUTE EXPORT
