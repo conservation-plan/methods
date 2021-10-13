@@ -10,8 +10,6 @@ This dataset uses geographic information from a [soil survey](survey.md) to crea
 
 In 2005, Thomas Villars, a Soil Resource Specialist for the USDA Natural Resources Conservation Service, working with Elizabeth H. Thompson and Eric R. Sorenson, authors of *Wetland, Woodland, Wildland -- A Guide to the Natural Communities of Vermont*, wrote a [report](https://drive.google.com/file/d/1F6-iq5-Duq4ixJ3BVIbK1ADH_cQeC8uz/view?usp=sharing){target=_blank} and developed a [table](https://docs.google.com/spreadsheets/d/1fsoxPz7ssAm_IEVcve-pv4SX_GGQLF7w/edit?usp=sharing&ouid=111896163379404259581&rtpof=true&sd=true){target=_blank} that associates natural communities to soil series.  
 
-
-
 ### Schema plan
 
 This is the goal, the dataset I'm trying to make, showing the schema.  
