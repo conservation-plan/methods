@@ -131,6 +131,11 @@ nav:
     - Shaded relief: elevation/shadedRelief.md
     - Slope class: elevation/slopeClass.md
     - Heat load index: elevation/heatLoadIndex.md
+  - Soils:
+    - Survey data: soils/survey.md
+    - Farmland class: soils/prime.md
+    - Hydric soils: soils/hydric.md
+    - Natural communities: soils/natCom.md
 
 
 #  - Contributing: contributing.md
