@@ -127,9 +127,9 @@ markdown_extensions:
 nav:
   - Introduction: index.md
   - Data sources:
-    - Buildings: data/buildings.md
-    - Land cover: data/landcover.md
-    - Roads: data/roads.md
+    - Buildings: datasets/buildings.md
+    - Land cover: datasets/landcover.md
+    - Roads: datasets/roads.md
   - Landscape elements:
     - Habitat blocks: landscape/habitatBlocks.md
 

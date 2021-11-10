@@ -6,22 +6,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/conservation-plan/methods/data/acSoilSurvey/</loc>
+         <loc>https://github.com/conservation-plan/methods/datasets/acSoilSurvey/</loc>
          <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/conservation-plan/methods/data/buildings/</loc>
+         <loc>https://github.com/conservation-plan/methods/datasets/buildings/</loc>
          <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/conservation-plan/methods/data/landcover/</loc>
+         <loc>https://github.com/conservation-plan/methods/datasets/landcover/</loc>
          <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/conservation-plan/methods/data/roads/</loc>
+         <loc>https://github.com/conservation-plan/methods/datasets/roads/</loc>
          <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -13,14 +13,14 @@
         <meta name="author" content="Jeff Howarth">
       
       
-        <link rel="canonical" href="https://github.com/conservation-plan/methods/landscape/habitatBlocks/">
+        <link rel="canonical" href="https://github.com/conservation-plan/methods/datasets/acSoilSurvey/">
       
       <link rel="icon" href="../../assets/eePrimerIcon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Habitat blocks - methods</title>
+        <title>acSoilSurvey - methods</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#purpose" class="md-skip">
+        <a href="#data-source" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Habitat blocks
+              acSoilSurvey
             
           </span>
         </div>
@@ -241,7 +241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasets/buildings/" class="md-nav__link">
+      <a href="../buildings/" class="md-nav__link">
         Buildings
       </a>
     </li>
@@ -253,7 +253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasets/landcover/" class="md-nav__link">
+      <a href="../landcover/" class="md-nav__link">
         Land cover
       </a>
     </li>
@@ -265,7 +265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasets/roads/" class="md-nav__link">
+      <a href="../roads/" class="md-nav__link">
         Roads
       </a>
     </li>
@@ -284,14 +284,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         Landscape elements
@@ -307,61 +305,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Habitat blocks
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../landscape/habitatBlocks/" class="md-nav__link">
         Habitat blocks
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    Purpose
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-prep" class="md-nav__link">
-    Data prep
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-process" class="md-nav__link">
-    Data process
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -396,22 +344,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    Purpose
+  <a href="#data-source" class="md-nav__link">
+    Data source
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-prep" class="md-nav__link">
-    Data prep
+  <a href="#known-problems" class="md-nav__link">
+    Known problems
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-process" class="md-nav__link">
-    Data process
+  <a href="#key-terms" class="md-nav__link">
+    Key terms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-fields" class="md-nav__link">
+    Useful fields
   </a>
   
 </li>
@@ -429,27 +384,117 @@
               
                 
                 
-                  <h1>Habitat blocks</h1>
+                  <h1>acSoilSurvey</h1>
                 
-                <h2 id="purpose">Purpose</h2>
-<p>To identify habitat blocks as directed by <a href="https://anr.vermont.gov/Planning/Forest_Blocks_And_Habitat_Connectors" target="_blank">Act 171</a>.  </p>
-<h2 id="data-prep">Data prep</h2>
+                <h2 id="data-source">Data source</h2>
+<p>In 1971, the Soil Conservation Service of the US Department of Agriculture published a <a href="https://drive.google.com/file/d/1GN9uxFkiAravmXoiPGv27FQ4R3SmkQWI/view?usp=sharing" target="_blank">soil survey of Addison County</a>.</p>
+<p>We used a shapefile of the soil map accessed from the <a href="https://datagateway.nrcs.usda.gov/" target="_blank">USDA Natural Resources Conservation Service Geospatial Data Gateway</a> on Jan 2, 2021.</p>
+<h2 id="known-problems">Known problems</h2>
+<p>Based on field work between 1941 and 1964, the Addison County soil survey relies on some of the oldest soil mapping in the state. As a result, the soil map reflects the knowledge and technology at this time. Surveys conducted later in the state describe some soil series that were not yet recognized at the time of the Addison County survey. Additionally, the boundaries of features on the soil map were produced by manually by transferring lines drawn on air photographs to a digital map layer. As a result, they should be interpreted as suggestive.  </p>
+<p>The soil map was produced for the purpose of helping manage farms and woodlands, select sites for roads, ponds, buildings, and other structures, and evaluate the suitability of land for different land uses, such as agriculture, industry, and recreation. As a result, soils without much value for farming were not described in detail. For example, large swamps are mapped simply as &lsquo;muck and peat&rsquo;, while large areas of the Green Mountains are described as &lsquo;Rock Land.&rsquo;  </p>
+<h2 id="key-terms">Key terms</h2>
 <ul>
-<li><a href="../data/landcover.md">Land cover</a>: to identify tree canopy and impervious or bare land    </li>
-<li><a href="../data/roads.md">Roads</a>: to identify highways or interstates or Class 3 roads  </li>
-<li><a href="../data/buildings.md">Buildings</a>: to identify areas within 100ft of a building (to remove landscaped tree canopy near buildings)  </li>
-<li>Export each dataset for Middlebury Study Area (<em>need to include a description for this</em>)</li>
+<li><strong>profile</strong>: sequence of natural layers, or horizons, from the surface down to the parent material.  </li>
+<li><strong>soil series</strong>: soils with similar profile, or with horizons of similar thickness, arrangement, and other important characteristics.   </li>
+<li><strong>soil phase</strong>: soils of the same series with a differing quality that affects use of the soil by people, such as texture of the surface, slope, or stoniness.  </li>
+<li><strong>mapping unit</strong>: the areas shown on a map (e.g. polygons), often corresponding roughly with soil phase.  </li>
+<li><strong>soil complex</strong>: two or more soil series that are too small to distinguish and are instead listed as a compound joined with a hyphen (e.g. Nassau-Dutchess).  </li>
+<li><strong>undifferentiated group</strong>: two or more soil series that could be delineated separately but are not necessary to separate for the purposes of the survey. These are listed with the conjunction &lsquo;and&rsquo;.  </li>
+<li><strong>land types</strong>: soils are so rocky, shallow, or severely eroded that they cannot be classified (e.g. &ldquo;Rock land&rdquo;).  </li>
+<li><strong>soil associations</strong>: a landscape that has distinctive proportional pattern of soils, normally consisting of one or more major soils at at least one minor soil.    </li>
 </ul>
-<h2 id="data-process">Data process</h2>
-<p>Main steps with Whitebox:  </p>
-<ol>
-<li>Create fragmentation layer from buildings and roads  </li>
-<li>Isolate tree canopy and lump small strips (from powerlines)  </li>
-<li>Fragment tree canopy and identify clumps &gt; 10 acres  </li>
-<li>Fill holes within habitat blocks  </li>
-<li>Identify discrete habitat blocks  </li>
-</ol>
-<p>Link to python script</p>
+<h2 id="useful-fields">Useful fields</h2>
+<p>In 2016, the USDA Natural Resources Conservation Service (formerly SCS) updated a <a href="https://docs.google.com/document/d/1LPT5FhB2-0dhugBLNnevv6bnTyb0r5ZD/edit?usp=sharing&amp;ouid=111896163379404259581&amp;rtpof=true&amp;sd=true" target="_blank"><strong>TOP20 table</strong></a> that tags map units with attributes for categories commonly used in land analysis. The following fields are contained in the shapefile&rsquo;s attribute table.    </p>
+<table>
+<thead>
+<tr>
+<th align="left">Category</th>
+<th align="left">Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AGVAL</td>
+<td align="left">Important Farmland Rating based on <a href="https://drive.google.com/file/d/1TP2_-SwG4UpUWVKo6tFRm49J1RJTLzhf/view?usp=sharing" target="_blank">&ldquo;Farmland Classification System for Vermont Soils&rdquo;</a></td>
+</tr>
+<tr>
+<td align="left">FLOOD</td>
+<td align="left">Flood frequency</td>
+</tr>
+<tr>
+<td align="left">FORSTGRP</td>
+<td align="left">Vermont forest land value groups</td>
+</tr>
+<tr>
+<td align="left">FORSTVAL</td>
+<td align="left">Relative forest value, based on <a href="https://drive.google.com/file/d/1FIYQqlATksQmgdbP-QYz01jxDGlqLhpA/view?usp=sharing" target="_blank">&ldquo;Soil Potential Study and Forest Land Value Groups for Vermont Soils&rdquo;</a></td>
+</tr>
+<tr>
+<td align="left">FROSTACTION</td>
+<td align="left">Potential frost action</td>
+</tr>
+<tr>
+<td align="left">GRAVEL</td>
+<td align="left">Potential source of gravel</td>
+</tr>
+<tr>
+<td align="left">HELCLASS</td>
+<td align="left">Erosion indexes from Universal Soil Loss Equation</td>
+</tr>
+<tr>
+<td align="left"><strong>HYDRIC</strong></td>
+<td align="left">Potential that hydric soils are present</td>
+</tr>
+<tr>
+<td align="left">HYDROGROUP</td>
+<td align="left">Hydrological group - well-drained to poorly-drained</td>
+</tr>
+<tr>
+<td align="left">ONSITE</td>
+<td align="left">Onsite sewage disposal class</td>
+</tr>
+<tr>
+<td align="left">PARENT</td>
+<td align="left">General class of parent material</td>
+</tr>
+<tr>
+<td align="left">PARENTSUB</td>
+<td align="left">More detailed parent material class</td>
+</tr>
+<tr>
+<td align="left"><strong>PRIME</strong></td>
+<td align="left">Prime, Statewide, Local, NPSL, Not rated</td>
+</tr>
+<tr>
+<td align="left">ROCKSHALLOW <br>ROCKDEEP</td>
+<td align="left">Range in depth to bedrock (inches)</td>
+</tr>
+<tr>
+<td align="left">SAND</td>
+<td align="left">Potential for source of sand</td>
+</tr>
+<tr>
+<td align="left">SLOPELOW <br> SLOPEHIGH</td>
+<td align="left">Range in slope (percent)</td>
+</tr>
+<tr>
+<td align="left">WATERSHALLOW <br>WATERDEEP</td>
+<td align="left">Range in depth to seasonal high water table</td>
+</tr>
+<tr>
+<td align="left">WATERKIND</td>
+<td align="left">type of seasonal high water table: apparent or perched</td>
+</tr>
+<tr>
+<td align="left">KfactWS</td>
+<td align="left">Dominant condition soil erodibility factor for use in soil loss equations</td>
+</tr>
+<tr>
+<td align="left">TFACTOR</td>
+<td align="left">Tolerable soil loss for us in soil loss equations</td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -465,26 +510,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../../datasets/roads/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Roads" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Roads
-            </div>
-          </div>
-        </a>
-      
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
