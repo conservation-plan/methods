@@ -39,7 +39,7 @@ var imageBB_inv = imageBB.unmask().lt(1);
 
 ## Dependencies  
 
-The buildingsBuffer100ft dataset is statewide, so the snippet above filters the dataset by a study region (Addison County).   
+The source dataset is statewide, so the snippet above filters the dataset by a study region (Addison County).   
 
 ```js
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

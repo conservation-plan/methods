@@ -25,7 +25,7 @@ With Earth Engine:
 
 ```js
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//  Roads from VTrans
+//  Roads  
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var roads = ee.FeatureCollection('projects/conservation-atlas/assets/infrastructure/e911_road_centerlines')

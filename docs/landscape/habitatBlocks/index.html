@@ -356,6 +356,54 @@
     Data process
   </a>
   
+    <nav class="md-nav" aria-label="Data process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-fragmentation-layer" class="md-nav__link">
+    1. Create fragmentation layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-model-tree-canopy" class="md-nav__link">
+    2. Model tree canopy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-identify-tree-clumps" class="md-nav__link">
+    3. Identify tree clumps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-fill-holes" class="md-nav__link">
+    4. Fill holes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-identify-habitat-blocks" class="md-nav__link">
+    5. Identify habitat blocks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-script" class="md-nav__link">
+    Python script
+  </a>
+  
 </li>
       
     </ul>
@@ -414,6 +462,54 @@
     Data process
   </a>
   
+    <nav class="md-nav" aria-label="Data process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-fragmentation-layer" class="md-nav__link">
+    1. Create fragmentation layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-model-tree-canopy" class="md-nav__link">
+    2. Model tree canopy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-identify-tree-clumps" class="md-nav__link">
+    3. Identify tree clumps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-fill-holes" class="md-nav__link">
+    4. Fill holes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-identify-habitat-blocks" class="md-nav__link">
+    5. Identify habitat blocks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-script" class="md-nav__link">
+    Python script
+  </a>
+  
 </li>
       
     </ul>
@@ -435,21 +531,37 @@
 <p>To identify habitat blocks as directed by <a href="https://anr.vermont.gov/Planning/Forest_Blocks_And_Habitat_Connectors" target="_blank">Act 171</a>.  </p>
 <h2 id="data-prep">Data prep</h2>
 <ul>
-<li><a href="../data/landcover.md">Land cover</a>: to identify tree canopy and impervious or bare land    </li>
-<li><a href="../data/roads.md">Roads</a>: to identify highways or interstates or Class 3 roads  </li>
-<li><a href="../data/buildings.md">Buildings</a>: to identify areas within 100ft of a building (to remove landscaped tree canopy near buildings)  </li>
+<li><a href="../../datasets/landcover/">Land cover</a>: to identify tree canopy and impervious or bare land    </li>
+<li><a href="../../datasets/roads/">Roads</a>: to identify highways or interstates or Class 3 roads  </li>
+<li><a href="../../datasets/buildings/">Buildings</a>: to identify areas within 100ft of a building (to remove landscaped tree canopy near buildings)  </li>
 <li>Export each dataset for Middlebury Study Area (<em>need to include a description for this</em>)</li>
 </ul>
 <h2 id="data-process">Data process</h2>
-<p>Main steps with Whitebox:  </p>
-<ol>
-<li>Create fragmentation layer from buildings and roads  </li>
-<li>Isolate tree canopy and lump small strips (from powerlines)  </li>
-<li>Fragment tree canopy and identify clumps &gt; 10 acres  </li>
-<li>Fill holes within habitat blocks  </li>
-<li>Identify discrete habitat blocks  </li>
-</ol>
-<p>Link to python script</p>
+<h3 id="1-create-fragmentation-layer">1. Create fragmentation layer</h3>
+<p>This step modeled features on the landscape that can fragment forest habitat.</p>
+<p>We considered state or federal highways and Class 3 town roads as fragmenting roads. We did not include Class 4 town roads, trails, forest highways, ferry routes, or private roads as features that fragment habitat, nor did we include railroad lines.  </p>
+<p>We added a 3 meter buffer to roads in order to approximate width because the source dataset was vector.  </p>
+<p>We considered land within 100ft of a building (including the building footprint) to be a fragmenting feature. This aimed to identify tree canopy that may be part of the landscaping footprint of a building.   </p>
+<p><img alt="Fragmenting features" src="../hbImages/fragFeatures.png" />  </p>
+<h3 id="2-model-tree-canopy">2. Model tree canopy</h3>
+<p>This step modeled patches of tree canopy. We first identified tree canopy from the land cover dataset.  </p>
+<p>Many forests in Middlebury include long cuts for powerlines. For example, the picture below shows two powerline cuts through Chipman Hill. While these cuts create edge effects on interior forest habitat, we do not consider these to be fragmenting features of habitat blocks. (Rather, we consider these cuts to influence the quality of habitat within blocks, which we address in a separate model).    </p>
+<p><img alt="Forest cuts" src="../hbImages/forestCuts.png" />  </p>
+<p>To lump these cuts with tree canopy, we buffered the tree canopy layer by 7.5 meters, inverted the layer, and then buffered the layer again by 7.5 meters. This lumps narrow cuts in the tree canopy (where a tree canopy edge is within 15 meters or another tree canopy edge) without extending the canopy edge in places that are greater than 15 meters from another tree canopy edge. While this method leaves small holes along power lines cuts, these will be filled in step 4 below.  </p>
+<p><img alt="Forest cuts filled" src="../hbImages/forestCutsFilled.png" />  </p>
+<h3 id="3-identify-tree-clumps">3. Identify tree clumps</h3>
+<p>This step identifies patches of tree canopy that are at least 10 acres.  </p>
+<p>We erased fragmenting features (result of step 1) from the tree canopy (result of step 2), identified clumps, calculated area, and then removed any clump less than 10 acres in area.  </p>
+<p>Our last step was to convert noData to zero, because the clump method had created noData as a background value.   </p>
+<p><img alt="Tree clumps" src="../hbImages/treeClumps.png" />  </p>
+<h3 id="4-fill-holes">4. Fill holes</h3>
+<p>This step aimed to fill small holes within the patches of tree canopy identified in the last step. We did this by clumping contiguous regions of non-tree canopy and then adding any regions that were less than 250 acres to the tree canopy layer.     </p>
+<p><img alt="Fill holes" src="../hbImages/fillHoles.png" /></p>
+<h3 id="5-identify-habitat-blocks">5. Identify habitat blocks</h3>
+<p>The last step identified discrete habitat blocks by clumping the result of the last step.  </p>
+<p><img alt="habitatBlocks" src="../hbImages/habitatBlocks.png" /></p>
+<h2 id="python-script">Python script</h2>
+<p>We implemented this model with the <a href="https://www.whiteboxgeo.com/geospatial-software/" target="_blank">WhiteboxTools Open Core</a>. The <strong>habitatBlock.py</strong> script can be found <a href="https://github.com/conservation-plan/methods/blob/master/wbt_pySpace/habitatBlocks.py" target="_blank">here</a>.   </p>
                 
               
               
