@@ -1,48 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://github.com/GOG0310/methods/</loc>
-         <lastmod>2021-10-13</lastmod>
+         <loc>https://github.com/conservation-plan/methods/</loc>
+         <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/GOG0310/methods/elevation/heatLoadIndex/</loc>
-         <lastmod>2021-10-13</lastmod>
+         <loc>https://github.com/conservation-plan/methods/data/acSoilSurvey/</loc>
+         <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/GOG0310/methods/elevation/lidarProcessing/</loc>
-         <lastmod>2021-10-13</lastmod>
+         <loc>https://github.com/conservation-plan/methods/data/buildings/</loc>
+         <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/GOG0310/methods/elevation/shadedRelief/</loc>
-         <lastmod>2021-10-13</lastmod>
+         <loc>https://github.com/conservation-plan/methods/data/landcover/</loc>
+         <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/GOG0310/methods/elevation/slopeClass/</loc>
-         <lastmod>2021-10-13</lastmod>
+         <loc>https://github.com/conservation-plan/methods/data/roads/</loc>
+         <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/GOG0310/methods/soils/hydric/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/GOG0310/methods/soils/natCom/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/GOG0310/methods/soils/prime/</loc>
-         <lastmod>2021-10-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/GOG0310/methods/soils/survey/</loc>
-         <lastmod>2021-10-13</lastmod>
+         <loc>https://github.com/conservation-plan/methods/landscape/habitatBlocks/</loc>
+         <lastmod>2021-11-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

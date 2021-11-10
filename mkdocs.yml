@@ -20,14 +20,13 @@
 
 # Project information
 site_name: methods
-site_url: https://github.com/GOG0310/methods
+site_url: https://github.com/conservation-plan/methods
 site_author: Jeff Howarth
-site_description: >-
-  Geographic methods for planning land conservation and restoration.
+site_description: Geographic methods for conservation planning.
 
 # Repository
-repo_name: GEOG0310/methods
-repo_url: https://github.com/GEOG310/methods
+repo_name: conservation-plan/methods
+repo_url: https://github.com/conservation-plan/methods
 edit_uri: ""
 
 # Copyright
@@ -35,8 +34,8 @@ copyright: Copyright &copy; 2021 Jeff Howarth
 
 # Configuration
 theme:
-  logo: images/eePrimerIcon.png
-  favicon: images/eePrimerIcon.png
+  logo: assets/eePrimerIcon.png
+  favicon: assets/eePrimerIcon.png
   name: material
   # custom_dir: mkdocs-material/material
 
@@ -127,21 +126,18 @@ markdown_extensions:
 # Page tree
 nav:
   - Introduction: index.md
-  - Elevation:
-    - Shaded relief: elevation/shadedRelief.md
-    - Slope class: elevation/slopeClass.md
-    - Heat load index: elevation/heatLoadIndex.md
-  - Soils:
-    - Survey data: soils/survey.md
-    - Farmland class: soils/prime.md
-    - Hydric soils: soils/hydric.md
-    - Natural communities: soils/natCom.md
+  - Data sources:
+    - Buildings: data/buildings.md
+    - Land cover: data/landcover.md
+    - Roads: data/roads.md
+  - Landscape elements:
+    - Habitat blocks: landscape/habitatBlocks.md
 
 
 #  - Contributing: contributing.md
 #  - License: license.md
 
-# Google Analytics
-google_analytics:
-  - G-G4GWH4RPQ1
-  - auto
+# # Google Analytics
+# google_analytics:
+#   - G-G4GWH4RPQ1
+#   - auto
