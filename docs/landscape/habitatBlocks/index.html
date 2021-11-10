@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#purpose" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -311,9 +316,51 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Habitat blocks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Habitat blocks
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    Purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-prep" class="md-nav__link">
+    Data prep
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-process" class="md-nav__link">
+    Data process
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -332,6 +379,50 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    Purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-prep" class="md-nav__link">
+    Data prep
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-process" class="md-nav__link">
+    Data process
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -340,7 +431,25 @@
                 
                   <h1>Habitat blocks</h1>
                 
-                
+                <h2 id="purpose">Purpose</h2>
+<p>To identify habitat blocks as directed by <a href="https://anr.vermont.gov/Planning/Forest_Blocks_And_Habitat_Connectors" target="_blank">Act 171</a>.  </p>
+<h2 id="data-prep">Data prep</h2>
+<ul>
+<li><a href="../../data/landcover/">Land cover</a>: to identify tree canopy and impervious or bare land    </li>
+<li><a href="../../data/roads/">Roads</a>: to identify highways or interstates or Class 3 roads  </li>
+<li><a href="../../data/buildings/">Buildings</a>: to identify areas within 100ft of a building (to remove landscaped tree canopy near buildings)  </li>
+<li>Export each dataset for Middlebury Study Area (<em>need to include a description for this</em>)</li>
+</ul>
+<h2 id="data-process">Data process</h2>
+<p>Main steps with Whitebox:  </p>
+<ol>
+<li>Create fragmentation layer from buildings and roads  </li>
+<li>Isolate tree canopy and lump small strips (from powerlines)  </li>
+<li>Fragment tree canopy and identify clumps &gt; 10 acres  </li>
+<li>Fill holes within habitat blocks  </li>
+<li>Identify discrete habitat blocks  </li>
+</ol>
+<p>Link to python script</p>
                 
               
               
