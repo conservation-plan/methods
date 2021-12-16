@@ -3,7 +3,7 @@
 #  purpose:  to identify habitat blocks for conservation planning
 #
 #  author:   Jeff Howarth
-#  update:   11/09/2021
+#  update:   12/09/2021
 #  license:  Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 #  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -30,15 +30,18 @@ wbt.work_dir = "/Users/jhowarth/projects/GEOG0310/wbt_pySpace/hb_midd"
 
 # Full datasets
 
-rds = "rdsFrag_0p5m.tif"        # Highways and Class 3 roads
-bb = "bb_merge.tif"             # 2016 building footprints with 100 ft buffer
-lc = "lc_0p5m.tif"              # 2016 Vermont base land cover
+rds = "rdsFragmenting_12092021.tif"        # Highways and Class 3 roads
+lc = "iLandCover_midd_12092021.tif"              # 2016 Vermont base land cover
+
 
 # Test datasets
 
 # rds = "rds_fragmenting.tif"       # Highways and Class 3 roads
 # bb = "buildingsBuffer100ft.tif"   # 2016 building footprints with 100 ft buffer
 # lc = "lc_5m.tif"                  # 2016 Vermont base land cover
+
+hbb = 12.192      # 40 foot buffer to contain powerlines cuts and islands.
+cr = False        # Clump rule (no diagonals)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # STEP 1:
@@ -54,11 +57,20 @@ wbt.buffer_raster(
     gridcells=False
 )
 
-# Add impervious land cover and buffered building together as constraints
+# Reclass impervious land cover (roads, buildings, bare ground, other pavement)
+# 5,6,7,8 --> 1
+# 0,1,2,3,4,9 --> 0
+
+wbt.reclass(
+    i = lc,
+    output = "00_lcImp.tif",
+    reclass_vals = "0;0;0;1;0;2;0;3;0;4;1;5;1;6;1;7;1;8;0;9",
+    assign_mode=True
+)
 
 wbt.add(
     input1 = "00_rds_buff3m.tif",
-    input2 = bb,
+    input2 = "00_lcImp.tif",
     output = "01_constraints.tif"
 )
 
@@ -81,16 +93,16 @@ wbt.reclass(
 wbt.reclass(
     i = lc,
     output = "11_treeCanopy.tif",
-    reclass_vals = "1;1;0;2;0;3;0;4;0;5;0;6;0;7;0;8",
+    reclass_vals = "1;0;1;1;0;2;0;3;0;4;0;5;0;6;0;7;0;8;0;9",
     assign_mode=True
 )
 
-# buffer out 7.5 meters (to remove powerline cuts from forest)
+# buffer out XX feet (to remove powerline cuts from forest)
 
 wbt.buffer_raster(
     i = "11_treeCanopy.tif",
     output = "12_treeCanopyBuffered.tif",
-    size = 7.5,
+    size = hbb,
     gridcells=False
 )
 
@@ -108,7 +120,7 @@ wbt.reclass(
 wbt.buffer_raster(
     i = "13_tcbInvert.tif",
     output = "14_tcbInvertBuffered.tif",
-    size = 7.5,
+    size = hbb,
     gridcells=False
 )
 
@@ -139,7 +151,7 @@ wbt.multiply(
 wbt.clump(
     i = "21_treesAfterConstraints.tif",
     output = "22_treeClumps.tif",
-    diag=False,
+    diag=cr,
     zero_back=True
 )
 
@@ -159,7 +171,7 @@ wbt.raster_area(
 wbt.reclass(
     i = "23_treeClumpAreas.tif",
     output = "24_treeGT10acres.tif",
-    reclass_vals = "0;0;40467;1;40467;999999999999999999999",
+    reclass_vals = "0;0;40468.6;1;40468.6;999999999999999999999",
     assign_mode=False
 )
 
@@ -187,7 +199,7 @@ wbt.reclass(
 wbt.clump(
     i = "31_bigTreeClumps_invert.tif",
     output = "32_holeClumps.tif",
-    diag=False,
+    diag=cr,
     zero_back=True
 )
 
@@ -201,26 +213,45 @@ wbt.raster_area(
     zero_back=True
 )
 
-# Reclass holes < 250 acres
+# Reclass holes < 500 acres (2023428.2 square meters)
 
 wbt.reclass(
     i = "33_holeClumpAreas.tif",
-    output = "34_holeLT250acres.tif",
-    reclass_vals = "1;0;1011714;0;1011714;99999999999999999999999",
+    output = "34_holeLTacres.tif",
+    reclass_vals = "1;0;2023428.2;0;2023428.2;99999999999999999999999",
     assign_mode=False
 )
 
 wbt.convert_nodata_to_zero(
-    i = "34_holeLT250acres.tif",
+    i = "34_holeLTacres.tif",
     output = "35_holeClumpAreas_nd0.tif"
+)
+
+# Reclass not fields
+# 0,1,2,3,5,6,7,8,9 --> not
+# 4 --> fields
+
+wbt.reclass(
+    i = lc,
+    output = "36_natLC.tif",
+    reclass_vals = "1;0;1;1;1;2;1;3;0;4;1;5;1;6;1;7;1;8;1;9",
+    assign_mode=True
+)
+
+## Fill holes with natural cover
+
+wbt.multiply(
+    input1 = "35_holeClumpAreas_nd0.tif",
+    input2 = "36_natLC.tif",
+    output = "37_holesWithNatLC.tif",
 )
 
 ## Add filled holes to tree clumps
 
 wbt.add(
     input1 = "25_bigTreeClumps_nd0.tif",
-    input2 = "35_holeClumpAreas_nd0.tif",
-    output = "36_block_holes_filled.tif"
+    input2 = "37_holesWithNatLC.tif",
+    output = "38_block_holes_filled.tif"
 )
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,9 +262,9 @@ wbt.add(
 ## Identify habitat blocks
 
 wbt.clump(
-    i = "36_block_holes_filled.tif",
+    i = "38_block_holes_filled.tif",
     output = "41_habitatBlocks.tif",
-    diag=False,
+    diag=cr,
     zero_back=True
 )
 

@@ -3,12 +3,11 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+.gitignore
 
 # WBT
 
 WBT/
-testDEM/
-sandbox/
 q/
 data/
-starts/
+__init__.py
