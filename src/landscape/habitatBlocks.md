@@ -21,7 +21,7 @@ We added a 3 meter buffer to roads in order to approximate width because the sou
 
 We considered land within 100ft of a building (including the building footprint) to be a fragmenting feature. This aimed to identify tree canopy that may be part of the landscaping footprint of a building.   
 
-![Fragmenting features](hbImages/fragFeatures.png)  
+![Fragmenting features](images/hb/fragFeatures.png)  
 
 ### 2. Model tree canopy    
 
@@ -29,11 +29,11 @@ This step modeled patches of tree canopy. We first identified tree canopy from t
 
 Many forests in Middlebury include long cuts for powerlines. For example, the picture below shows two powerline cuts through Chipman Hill. While these cuts create edge effects on interior forest habitat, we do not consider these to be fragmenting features of habitat blocks. (Rather, we consider these cuts to influence the quality of habitat within blocks, which we address in a separate model).    
 
-![Forest cuts](hbImages/forestCuts.png)  
+![Forest cuts](images/hb/forestCuts.png)  
 
 To lump these cuts with tree canopy, we buffered the tree canopy layer by 7.5 meters, inverted the layer, and then buffered the layer again by 7.5 meters. This lumps narrow cuts in the tree canopy (where a tree canopy edge is within 15 meters or another tree canopy edge) without extending the canopy edge in places that are greater than 15 meters from another tree canopy edge. While this method leaves small holes along power lines cuts, these will be filled in step 4 below.  
 
-![Forest cuts filled](hbImages/forestCutsFilled.png)  
+![Forest cuts filled](images/hb/forestCutsFilled.png)  
 
 ### 3. Identify tree clumps   
 
@@ -43,19 +43,19 @@ We erased fragmenting features (result of step 1) from the tree canopy (result o
 
 Our last step was to convert noData to zero, because the clump method had created noData as a background value.   
 
-![Tree clumps](hbImages/treeClumps.png)  
+![Tree clumps](images/hb/treeClumps.png)  
 
 ### 4. Fill holes   
 
 This step aimed to fill small holes within the patches of tree canopy identified in the last step. We did this by clumping contiguous regions of non-tree canopy and then adding any regions that were less than 250 acres to the tree canopy layer.     
 
-![Fill holes](hbImages/fillHoles.png)
+![Fill holes](images/hb/fillHoles.png)
 
 ### 5. Identify habitat blocks  
 
 The last step identified discrete habitat blocks by clumping the result of the last step.  
 
-![habitatBlocks](hbImages/habitatBlocks.png)
+![habitatBlocks](images/hb/habitatBlocks.png)
 
 ## Python script  
 
