@@ -19,7 +19,7 @@
 # IN THE SOFTWARE.
 
 # Project information
-site_name: methods
+site_name: Geographic methods for municipal conservation plans
 site_url: https://github.com/conservation-plan/methods
 site_author: Jeff Howarth
 site_description: Geographic methods for conservation planning.
@@ -131,7 +131,8 @@ nav:
     - Land cover: datasets/landcover.md
     - Roads: datasets/roads.md
   - Landscape elements:
-    - Habitat blocks: landscape/habitatBlocks.md
+    - Development blocks: landscape/devBlocks.md
+    - Forest blocks: landscape/habitatBlocks.md
 
 
 #  - Contributing: contributing.md

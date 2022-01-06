@@ -7,10 +7,12 @@ To identify blocks of developed land from land cover characteristics. Developed 
 - [Land cover](../datasets/landcover.md): to identify tree canopy and impervious or bare land    
 - Residence points
 
-## (1) Define developed land  
+## Workflow
 
-## (2) Filter and lump targets  
+### 1. Define developed land  
 
-## (3) Classify by area (size)
+### 2. Filter and lump targets  
 
-## (4) Classify by residential density
+### 3. Classify by area (size)
+
+### 4. Classify by residential density
